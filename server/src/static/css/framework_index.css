@@ -1,0 +1,50 @@
+/* Components design */
+@import url("components/theme.css");
+@import url("components/colors.css");
+@import url("components/image.css");
+@import url("components/fonts.css");
+@import url("components/button.css");
+@import url("components/tooltip.css");
+@import url("components/scrollbar.css");
+@import url("components/modal.css");
+@import url("components/menu.css");
+@import url("components/accordion.css");
+@import url("components/forms.css");
+@import url("components/card.css");
+
+#main_index{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#conteiner-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#banner_btn_google{
+    margin-top: 10px;
+}
+
+#banner_info_term {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+}
+#banner_info_term a {
+    margin: 10px 10px;
+}
+
+#pallet_sobre_top, #pallet_sobre_bot, #pallet_termo_top, #pallet_termo_bot {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}

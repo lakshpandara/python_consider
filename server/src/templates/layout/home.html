@@ -1,0 +1,22 @@
+{% extends "base_home.html" %}
+
+{% block title %}Considerado - Home{% endblock %}
+
+{% block navbar %}
+    {% from "macros/macro_navbar.html" import navbar %}
+    {{ navbar(dict_user) }}
+{% endblock %}
+
+{% block feed %}
+    <div id="container_feed">
+        {% from "macros/macro_feed.html" import feed %}
+        {{ feed(dict_feed) }}
+    </div>
+{% endblock%}
+
+{% block profile %}
+    <div id="container_profile">
+        {% from "macros/macro_profile.html" import profile %}
+        {{ profile(dict_user, dict_posts) }}
+    </div>
+{% endblock%}

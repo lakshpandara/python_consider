@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="A Considerado projects">
+    <meta name="author" content="Gustavo Boaz">
+    <meta name="theme-color" content="#E2E2E2">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E2E2E2">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/icons/icon-152x152.png') }}">
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about_term.css') }}">
+
+   <script src="https://kit.fontawesome.com/9bcfc67907.js" crossorigin="anonymous"></script>
+   <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+    {% block term %}{% endblock %}
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

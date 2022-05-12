@@ -1,0 +1,24 @@
+.accordion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: var(--bn-2);
+}
+    
+.panel {
+    padding: 0 10px;
+    display: none;
+}

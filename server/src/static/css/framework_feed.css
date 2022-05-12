@@ -1,0 +1,42 @@
+@import url("components/theme.css");
+@import url("components/colors.css");
+@import url("components/image.css");
+@import url("components/fonts.css");
+@import url("components/button.css");
+@import url("components/tooltip.css");
+@import url("components/scrollbar.css");
+@import url("components/modal.css");
+@import url("components/menu.css");
+@import url("components/accordion.css");
+@import url("components/forms.css");
+@import url("components/card.css");
+
+#container_feed {
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    right: 2px;
+
+    display: block;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#feed_content, #items_feed_body {
+    width: 100%;
+    height: 100%;
+}
+
+.item-consultoria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:740px) {
+    #container_feed {
+        left: 5px;
+    }
+}

@@ -1,0 +1,46 @@
+{% extends "base_welcome.html" %}
+
+{% block title %}Bem Vindo, {{ user }}!{% endblock %}
+
+{% block cityform %}
+<div id="content_form_welcome">
+    <img class="regular-img rb-10" src="{{ url_for('static', filename='img/assets_v3/icon-512x512-t-square.png') }}">
+    <h1 class="font-regular tn-1">Considerado!</h1>
+    <h4 class="font-regular tn-1">Defina um estado e município.</h4>
+    <form id="form_city" action="{{ url_for('home.welcome', user_session = '{{ user }}') }}" method="post" autocomplete="on">
+        <fieldset id="area_field_welcome">
+            <legend id="" class="font-medium tn-4">
+                <i class="fas fa-circle medium tpc"></i>
+            </legend>
+
+            <ul>
+                <li class="area_content active_step">
+                    <label for="fwestado" class="font-medium tn-1">Estado</label><br>
+                    <h6 class="font-regular tn-1">Qual a Estado deseja Consultar? ex. São Paulo, Rio de Janeiro...</h6>
+                    <br>
+                    <div class="select">
+                        <select name="fwestado" id="fwestado" class="scrollbar">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <br>
+                    <label for="fwcidade" class="font-medium tn-1">Cidade</label><br>
+                    <h6 class="font-regular tn-1">Qual a Cidade deseja Consultar? ex. Americana, Campinas...</h6>
+                    <br>
+                    <div class="select">
+                        <select name="fwcidade" id="fwcidade" class="scrollbar">
+                        </select>
+                    </div>
+                    <br>
+
+                    <div id="content_submit_area" class="stage-button ">
+                        <button type="submit" class="btn-t bpc">
+                            <h4 class="font-regular tn-1">ACESSAR</h4>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

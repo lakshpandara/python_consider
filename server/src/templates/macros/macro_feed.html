@@ -1,0 +1,69 @@
+{% macro feed(dict_feed) %}
+<div id="feed_content" class="">
+    <div id="items_feed_body" class="">
+        {% if dict_feed.items %}
+            {% for key, value in dict_feed.items() %}
+            <div class="item-consultoria">
+                <div class="header-card">
+                    <img class="mini-img rb-10" src="{{ value._fotocriador }}">
+                    <div class="">
+                        <h4 id="" class="font-semi-bold  tn-4">{{ value.fnome }}</h4>
+                        <h6 id="" class="font-medium tn-4">{{ value.fcidade | replace("_", " ") }} ,{{ value.festado | replace("_", " ") }}</h6>
+                    </div>
+                </div>
+                <div class="card-consultoria-feed">
+                    <div class="card-consultoria">
+                        <div class="key-card">
+                            <a id="" class="btn-is bn-1">
+                                <i class="fas fa-mouse large tn-4"></i>
+                            </a>
+                        </div>
+                        <div class="front bn-5">
+                            <div class="front-title">
+                                <h1 id="" class="font-regular tn-4">{{ value.fconsultoria | replace("_", " ") }}</h1>
+                                <h5 id="" class="font-regular tn-4">Consultor(a): {{ value.fnome }} | Nivel: {{ value.fexperiencia }}</h5>
+                            </div>
+                            <img class="logo-icon small-img" src="{{ url_for('static', filename='img/assets_v3/icon-512x512-t.png') }}">
+                        </div>
+                        <div class="back bn-5">
+                            <div class="back-data">
+                                <div class="data_location">
+                                    <h4 id="" class="font-regular tn-4">{{ value.fcidade | replace("_", " ") }}</h4>
+                                    <i class="fas fa-city large purple"></i>
+                                </div>
+                                <div class="data-money">
+                                    <h4 id="" class="font-regular tn-4">R$ {{ value.fpreco }}</h4>
+                                    <i class="fas fa-dollar-sign large green"></i>
+                                </div>
+                                <div class="data-time">
+                                    <h4 id="" class="font-regular tn-4">{{ value.ftempo }} h</h4>
+                                    <i class="fas fa-hourglass-half large blue"></i>
+                                </div>
+                                <div class="data-weckend-clock">
+                                    <div class="weckend-clock">
+                                        <h5 id="" class="font-regular tn-4">
+                                            {% for item in value.fsemana %}
+                                                {{ item }}
+                                            {% endfor %}
+                                        </h5>
+                                        <h5 id="" class="font-regular tn-4">{{ value.fhinicial }} á {{ value.fhfinal }}</h5>
+                                    </div>
+                                    <i class="far fa-calendar-alt large orange"></i>
+                                </div>
+                            </div>
+                            <div class="back-contact">
+                                <h6 id="" class="font-regular tn-4">{{ value.fphone }} | {{ value.femail }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="">
+                <h1 class="font-regular tn-4">Sem Posts</h1>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

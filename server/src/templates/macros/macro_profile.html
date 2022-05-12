@@ -1,0 +1,71 @@
+{% macro profile(dict_user, dict_posts) %}
+<div id="profile_content" class="">
+    <div id="item_profile_header" class="">
+        <img class="medium-img rb-10 bo-solid" src="{{ dict_user['_photho'] }}">
+        <h3 class="font-regular tn-4" >{{ dict_user['_name'] }}</h3>
+        <h6 class="font-regular tn-4" >{{ dict_user['_email'] }}</h6>
+    </div>
+    <div id="item_profile_body" class="">
+        {% if dict_posts.items %}
+            {% for key, value in dict_posts.items() %}
+            <div class="card-consultoria-perfil">
+                <div class="card-consultoria">
+                    <form class="del-card" action="/homedel/" method="post" autocomplete="on">
+                        <input type="text" name="fdmprofile" value="{{ key|e }}" hidden>
+                        <button class="btn-is bn-1" type="submit" >
+                            <i class="fas fa-trash-alt large red"></i>
+                        </button>
+                    </form>
+                    <div class="key-card">
+                        <a id="" class="btn-is bn-1">
+                            <i class="fas fa-mouse large tn-4"></i>
+                        </a>
+                    </div>
+                    <div class="front bn-5">
+                        <div class="front-title">
+                            <h1 id="" class="font-regular tn-4">{{ value.fconsultoria | replace("_", " ") }}</h1>
+                            <h5 id="" class="font-regular tn-4">Consultor(a): {{ value.fnome }} | Nivel: {{ value.fexperiencia }}</h5>
+                        </div>
+                        <img class="logo-icon small-img" src="{{ url_for('static', filename='img/assets_v3/icon-512x512-t.png') }}">
+                    </div>
+                    <div class="back bn-5">
+                        <div class="back-data">
+                            <div class="data_location">
+                                <h4 id="" class="font-regular tn-4">{{ value.fcidade | replace("_", " ") }}, {{ value.festado | replace("_", " ") }}</h4>
+                                <i class="fas fa-city large purple"></i>
+                            </div>
+                            <div class="data-money">
+                                <h4 id="" class="font-regular tn-4">R$ {{ value.fpreco }}</h4>
+                                <i class="fas fa-dollar-sign large green"></i>
+                            </div>
+                            <div class="data-time">
+                                <h4 id="" class="font-regular tn-4">{{ value.ftempo }} h</h4>
+                                <i class="fas fa-hourglass-half large blue"></i>
+                            </div>
+                            <div class="data-weckend-clock">
+                                <div class="weckend-clock">
+                                    <h5 id="" class="font-regular tn-4">
+                                        {% for item in value.fsemana %}
+                                            {{ item }}
+                                        {% endfor %}
+                                    </h5>
+                                    <h5 id="" class="font-regular tn-4">{{ value.fhinicial }} á {{ value.fhfinal }}</h5>
+                                </div>
+                                <i class="far fa-calendar-alt large orange"></i>
+                            </div>
+                        </div>
+                        <div class="back-contact">
+                            <h6 id="" class="font-regular tn-4">{{ value.fphone }} | {{ value.femail }}</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="">
+                <h1 class="font-regular tn-4">Crie um novo Post</h1>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

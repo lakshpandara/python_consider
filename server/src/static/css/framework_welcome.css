@@ -1,0 +1,54 @@
+@import url("components/theme.css");
+@import url("components/colors.css");
+@import url("components/image.css");
+@import url("components/fonts.css");
+@import url("components/button.css");
+@import url("components/tooltip.css");
+@import url("components/scrollbar.css");
+@import url("components/modal.css");
+@import url("components/menu.css");
+@import url("components/accordion.css");
+@import url("components/forms.css");
+@import url("components/card.css");
+
+#content_form_welcome{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#form_city {
+    width: 400px;
+}
+
+#form_city fieldset{
+    border-radius: 10px;
+}
+
+fieldset ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+#area_field_welcome ul, li {
+    width: 100%;
+    list-style-type: none;
+}
+
+#content_submit_area {
+    width: 100%;
+}
+
+#content_submit_area button{
+    width: 100%;
+}
+
+@media screen and (max-width:740px) {
+    #form_city{
+        width: 100%;
+    }
+}

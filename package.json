@@ -1,0 +1,16 @@
+{
+  "name": "considerado-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gustavo Boaz",
+  "license": "ISC",
+  "devDependencies": {
+    "firebase-tools": "^8.1.1"
+  },
+  "dependencies": {},
+  "description": ""
+}

@@ -1,0 +1,78 @@
+/* Components design */
+@import url("components/theme.css");
+@import url("components/colors.css");
+@import url("components/image.css");
+@import url("components/fonts.css");
+@import url("components/button.css");
+@import url("components/tooltip.css");
+@import url("components/scrollbar.css");
+@import url("components/modal.css");
+@import url("components/menu.css");
+@import url("components/accordion.css");
+@import url("components/forms.css");
+@import url("components/card.css");
+
+#form_Consultoria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 56px;
+}
+
+#area_field_consultoria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 400px;
+
+    border-radius: 10px;
+}
+
+#area_field_consultoria ul{
+    width: 100%;
+}
+
+.area_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.active_step{
+    display: block;
+}
+
+fieldset ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+.stage-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#input_tempo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media screen and (max-width:740px) {
+    #area_field_consultoria{
+        width: 95%;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="A Considerado projects">
+    <meta name="author" content="Gustavo Boaz">
+    <meta name="theme-color" content="#E2E2E2">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#E2E2E2">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/icons/icon-152x152-t.png') }}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon-32x32-t.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon-32x32-t.png') }}" type="image/x-icon">
+
+    <!-- Font icons -->
+    <script src="https://kit.fontawesome.com/9bcfc67907.js" crossorigin="anonymous"></script>
+    
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/globals.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/framework_welcome.css') }}">
+
+    <!-- Library JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/dropdow_welcome.js') }}"></script>
+    
+    <!-- Title-->
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+<body>
+    <div id="theme">
+        <input type="radio" name="theme" value="primary" id="theme_p" checked="checked"/>
+        <label id="primary_logo" for="theme_p">
+            <img class="small-img" src="{{ url_for('static', filename='img/assets_v3/moon2.png') }}">
+        </label>
+        <input type="radio" name="theme" value="secondary" id="theme_s"/>
+        <label id="secondary_logo" for="theme_s">
+            <img class="small-img" src="{{ url_for('static', filename='img/assets_v3/moon1.png') }}">
+        </label>
+    </div>
+    <main id="main_welcome" class="bn-4 scrollbar">
+        {% block cityform %}{% endblock %}
+    </main>
+
+    <!-- Library JS -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/welcome.js') }}"></script>
+</body>
+</html>

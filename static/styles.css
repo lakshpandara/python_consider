@@ -1,0 +1,17 @@
+#body_base{
+    background: rgb(230, 230, 230);
+}
+
+#_banner{
+    padding-top: 10%;
+    background: rgb(230, 230, 230);
+}
+
+#_search{
+    padding-bottom: 20%;
+    background: rgb(230, 230, 230);
+}
+
+#_footer{
+    background: rgb(230, 230, 230);
+}

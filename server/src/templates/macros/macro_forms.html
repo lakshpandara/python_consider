@@ -1,0 +1,241 @@
+{% macro formConsultoria() %}
+    <form id="form_Consultoria" action="/homepost/" method="post" autocomplete="on" oninput="y.value=parseInt(fpreco.value)">
+        <fieldset id="area_field_consultoria">
+            <legend id="steps" class="font-medium tn-4">
+                <i class="fas fa-circle medium tpc"></i>
+                <i class="fas fa-circle medium"></i>
+                <i class="fas fa-circle medium"></i>
+                <i class="fas fa-circle medium"></i>
+                <i class="fas fa-circle medium"></i>
+                <i class="fas fa-circle medium"></i>
+            </legend>
+
+            <ul>
+                <li class="area_content active_step">
+                    <label for="fconsultoria" class="font-medium tn-4">Consultoria</label><br>
+                    <h6 class="font-regular tn-4">Do que se trata sua Consultoria? ex. Advogado, Pintor, Médico...</h6>
+                    <br>
+                    <input type="text" id="fconsultoria" name="fconsultoria" class="forms-simple font-regular bn-1 tn-4">
+                    <br><br>
+
+                    <label for="festado" class="font-medium tn-4">Estado</label><br>
+                    <h6 class="font-regular tn-4">Qual a Estado para esta Consultoria? ex. São Paulo, Rio de Janeiro...</h6>
+                    <br>
+                    <div class="select">
+                        <select name="festado" id="festado" class="scrollbar">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <br>
+                    <label for="fcidade" class="font-medium tn-4">Cidade</label><br>
+                    <h6 class="font-regular tn-4">Qual a Cidade para esta Consultoria? ex. Americana, Campinas...</h6>
+                    <br>
+                    <div class="select">
+                        <select name="fcidade" id="fcidade" class="scrollbar">
+                        </select>
+                    </div>
+                    <br>
+
+                    <div class="stage-button ">
+                        <a id="" class="btn-t bpo next">
+                            <h4 class="font-regular tn-4">Próximo</h4>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="area_content ">
+                    <label for="fnome" class="font-medium tn-4">Nome</label><br>
+                    <h6 class="font-regular tn-4">Qual nome do Consultor? ex. Claurio, Maria, Pedro...</h6>
+                    <br>
+                    <input type="text" id="fnome" name="fnome" class="forms-simple font-regular bn-1 tn-4">
+                    <br><br>
+
+                    <label for="fexperiencia" class="font-medium tn-4">Experiência</label><br>
+                    <h6 class="font-regular tn-4">Qual nivel de experiência tem?</h6>
+                    <h6 class="font-regular tn-4">Considere Junior para pouco experiente e Especialista para muita experiente.</h6>
+                    <br>
+                    <input type="radio" id="junior" name="fexperiencia" value="Junior">
+                    <label for="junior" class="font-medium tn-4"><span><span></span></span>Junior</label><br>
+
+                    <input type="radio" id="pleno" name="fexperiencia" value="Pleno">
+                    <label for="pleno" class="font-medium tn-4"><span><span></span></span>Pleno</label><br>
+
+                    <input type="radio" id="senior" name="fexperiencia" value="Senior">
+                    <label for="senior" class="font-medium tn-4"><span><span></span></span>Senior</label><br>
+
+                    <input type="radio" id="expecialista" name="fexperiencia" value="Especialista">
+                    <label for="expecialista" class="font-medium tn-4"><span><span></span></span>Especialista</label>
+
+                    <div class="stage-button ">
+                        <a id="" class="btn-t bne prev">
+                            <h4 class="font-regular tn-4">Antérior</h4>
+                        </a>
+                        <a id="" class="btn-t bpo next">
+                            <h4 class="font-regular tn-4">Próximo</h4>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="area_content ">
+                    <label for="fpreco" class="font-medium tn-4">Valor da Consulta</label><br>
+                    <h6 class="font-regular tn-4">Quanto irá cobrar pela consulta? Valor expreço em real de 0 á 500</h6>
+                    <br>
+                    <h4 class="font-regular tn-4">
+                        R$
+                        <output name="y" for="fpreco" class="font-regular tn-4"></output>
+                    </h4>
+                    <br> 
+                    <input type="range" id="fpreco" name="fpreco" value="0" min="0" max="500" step="10" class="input-slider">
+                    <br><br>
+
+                    <label for="ftempo" class="font-medium tn-4">Tempo de Consulta (Hora)</label><br>
+                    <h6 class="font-regular tn-4">Quanto tempo pode durar a consulta? ex. 1, 2, 3...</h6>
+                    <br>
+                    <div id="input_tempo" class="input-number">
+                        <a id="number_min" class="btn-ic bn-5 tooltip-bot">
+                            <i class="fas fa-minus tn-4 medium"></i>
+                        </a>
+                        <input type="number" id="ftempo" name="ftempo" class="font-regular bn-1 tn-4">
+                        <a id="number_plus" class="btn-ic bn-5 tooltip-bot">
+                            <i class="fas fa-plus tn-4 medium"></i>
+                        </a>
+                    </div>
+                    <div class="stage-button">
+                        <a id="" class="btn-t bne prev">
+                            <h4 class="font-regular tn-4">Antérior</h4>
+                        </a>
+                        <a id="" class="btn-t bpo next">
+                            <h4 class="font-regular tn-4">Próximo</h4>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="area_content ">
+                    <label for="fsemana" class="font-medium tn-4">Dias da Semana</label><br>
+                    <h6 class="font-regular tn-4">Quais dias da semana atende? Selecione multiplos abaixo.</h6>
+                    <br>
+                    <input type="checkbox" id="segunda" name="fsemana" value="Seg ">
+                    <label for="segunda" class="font-medium tn-4"><span><span></span></span>Segunda</label><br>
+
+                    <input type="checkbox" id="terca" name="fsemana" value="Ter ">
+                    <label for="terca" class="font-medium tn-4"><span><span></span></span>Terça</label><br>
+
+                    <input type="checkbox" id="quarta" name="fsemana" value="Qua ">
+                    <label for="quarta" class="font-medium tn-4"><span><span></span></span>Quarta</label><br>
+
+                    <input type="checkbox" id="quinta" name="fsemana" value="Qui ">
+                    <label for="quinta" class="font-medium tn-4"><span><span></span></span>Quinta</label><br>
+
+                    <input type="checkbox" id="sexta" name="fsemana" value="Sex ">
+                    <label for="sexta" class="font-medium tn-4"><span><span></span></span>Sexta</label><br>
+
+                    <input type="checkbox" id="sabado" name="fsemana" value="Sab ">
+                    <label for="sabado" class="font-medium tn-4"><span><span></span></span>Sabado</label><br>
+
+                    <input type="checkbox" id="domingo" name="fsemana" value="Dom ">
+                    <label for="domingo" class="font-medium tn-4"><span><span></span></span>Domingo</label>
+                    <br><br>
+
+                    <label for="" class="font-medium tn-4">Horario de Expediente</label><br>
+                    <h6 class="font-regular tn-4">Que horario inicia e termina seu expediente!.</h6>
+                    <br>
+                    <label for="fhinicial" class="font-medium tn-4">Horario Inicial</label><br>
+                    <input type="time" id="fhinicial" name="fhinicial" class="font-regular forms-time bn-1 tn-4"><br>
+
+                    <label for="fhfinal" class="font-medium tn-4">Horario Final</label><br>
+                    <input type="time" id="fhfinal" name="fhfinal" class=" font-regular forms-time bn-1 tn-4"><br>
+
+                    <div class="stage-button">
+                        <a id="" class="btn-t bne prev">
+                            <h4 class="font-regular tn-4">Antérior</h4>
+                        </a>
+                        <a id="" class="btn-t bpo next">
+                            <h4 class="font-regular tn-4">Próximo</h4>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="area_content ">
+                    <label for="" class="font-medium tn-4">Contato</label><br>
+                    <h6 class="font-regular tn-4">Qual é o seu contato?</h6>
+                    <h6 class="font-regular tn-4">ex telefone. xx x xxxx xxxx / email. teuemail@provedor.com</h6>
+                    <br>
+                    <label for="fphone" class="font-medium tn-4">Telefone</label><br>
+                    <input type="tel" id="fphone" name="fphone" class="forms-simple font-regular bn-1 tn-4">
+                    <br>
+                    <label for="femail" class="font-medium tn-4">E-mail</label><br>
+                    <input type="email" id="femail" name="femail" class="forms-simple font-regular bn-1 tn-4">
+
+                    <div class="stage-button">
+                        <a id="" class="btn-t bne prev">
+                            <h4 class="font-regular tn-4">Antérior</h4>
+                        </a>
+                        <a id="" class="btn-t bpo next">
+                            <h4 class="font-regular tn-4">Visualizar</h4>
+                        </a>
+                    </div>
+                </li>
+
+                <li class="area_content ">
+                    <legend class="font-medium tn-4">Visualização</legend>
+                    
+                    <div class="card-consultoria">
+                        <div class="key-card">
+                            <a id="" class="btn-is">
+                                <i class="fas fa-mouse large tn-4"></i>
+                            </a>
+                        </div>
+                        <div class="front bn-1">
+                            <div class="front-title">
+                                <h1 id="ccons" class="font-regular tn-4"></h1>
+                                <h5 id="cnaex" class="font-regular tn-4"></h5>
+                            </div>
+                            <img class="logo-icon small-img" src="{{ url_for('static', filename='img/assets_v3/icon-512x512-t.png') }}">
+                        </div>
+                        <div class="back bn-1">
+                            <div class="back-data">
+                                <div class="data-money">
+                                    <h4 id="cmone" class="font-regular tn-4"></h4>
+                                    <i class="fas fa-dollar-sign large green"></i>
+                                </div>
+                                <div class="data-time">
+                                    <h4 id="ctime" class="font-regular tn-4"></h4>
+                                    <i class="fas fa-hourglass-half large blue"></i>
+                                </div>
+                                <div class="data-weckend-clock">
+                                    <div class="weckend-clock">
+                                        <h5 id="cwick" class="font-regular tn-4"></h5>
+                                        <h5 id="ctinf" class="font-regular tn-4"></h5>
+                                    </div>
+                                    <i class="far fa-calendar-alt large orange"></i>
+                                </div>
+                            </div>
+                            <div class="back-contact">
+                                <h6 id="ccont" class="font-regular tn-4"></h6>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="stage-button">
+                        <a id="" class="btn-t bne prev">
+                            <h4 class="font-regular tn-4">Antérior</h4>
+                        </a>
+                        <button type="submit" class="btn-t bpc">
+                            <h4 class="font-regular tn-4">Publicar</h4>
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
+        </fieldset>
+    </form>
+{% endmacro %}
+
+{% macro formServicos() %}
+
+{% endmacro %}
+
+{% macro formEmprego() %}
+
+{% endmacro %}

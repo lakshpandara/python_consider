@@ -1,0 +1,140 @@
+{% macro bar() %}
+
+{% endmacro %}
+{% macro navbar(dict_user) %}
+<div id="conteiner_navbar" class="bn-5">
+    <div id="content_primeiro">
+        <div id="content_logo">
+            <img class="small-img rb-10" src="{{ url_for('static', filename='img/assets_v3/icon-512x512-t-square.png') }}">
+        </div>
+        <form id="search_home" action="{{ url_for('home.home', select_user = 'user', select_estado = 'state', select_cidade = 'city') }}" method="post">
+            <div id="pesquisa_considerado" class="forms-i tn-4">
+                <i class="fas fa-search"></i>
+                <input class="forms-pesquisa font-medium bn-1 tn-4" type="text" id="fspesquisa" name="fspesquisa" placeholder="Pesquisar em Considerado">
+            </div>
+        </form>
+    </div>
+    <div id="content_segundo">
+        <div id="home_btn">
+            <a id="btn_home" class="btn-is bn-5 tooltip-bot">
+                <span class="bn-4">
+                    <h6 class="font-bold tn-1">Home</h6>
+                </span>
+                <i class="fas fa-home tn-4 large"></i>
+            </a>
+        </div>
+        <div id="profile_btn">
+            <a id="btn_profile" class="btn-is bn-5 tooltip-bot">
+                <span class="bn-4">
+                    <h6 class="font-bold tn-1">Perfil</h6>
+                </span>
+                <img class="mini-img rb-10 bo-solid" src="{{ dict_user['_photho'] }}">
+            </a>
+        </div>
+        <div id="btn_criar">
+            <a class="btn-is bn-1 tooltip-bot">
+                <span class="bn-4">
+                    <h6 class="font-bold tn-1">Criar</h6>
+                </span>
+                <i class="fas fa-plus tpo medium"></i>
+            </a>
+        </div>
+        <div id="btn_local">
+            <a class="btn-is bn-1 tooltip-bot" href="{{ url_for('home.welcome', user_session = 'Local' ) }}">
+                <span class="bn-4">
+                    <h6 class="font-bold tn-1">Local</h6>
+                </span>
+                <i class="fas fa-location-arrow tne medium"></i>
+            </a>
+        </div>
+        <div id="menu_conta" class="menu-bot">
+            <a id="btn_conta" class="btn-is bn-1 tooltip-bot">
+                <span class="bn-4">
+                    <h6 class="font-bold tn-1">App</h6>
+                </span>
+                <i class="fas fa-chevron-circle-down tn-4 medium"></i>
+            </a>
+            <div id="conta_lista" class="menu-display bn-5">
+                <div id="content_lista" class="">
+                    <div id="item_instalar">
+                        <a id="btnAdd" class="btn-ti bn-5">
+                            <h4 class="font-regular tn-4">Instalar</h4>
+                            <i class="fas fa-plus tn-4 medium"></i>
+                        </a>
+                    </div>
+                    <hr>
+                    <div id="item_sair">
+                        <a id="btn_sair" class="btn-ti bn-5" href="{{ url_for('index.logout') }}">
+                            <h4 class="font-regular tn-4">Sair</h4>
+                            <i class="fas fa-door-open tn-4 medium"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modal_post" class="modal-full bn-5 scrollbar">
+    <div id="btn_return_modal" class="return bn-1">
+        <a class="btn-is bn-1">
+            <i class="fas fa-arrow-left tn-4 large"></i>
+        </a>
+    </div>
+    <div id="container_post_modal" class="scrollbar">
+        <div id="card_consultoria" class="card-post">
+            <img class="" src="{{ url_for('static', filename='img/assets_png/cons_banner.png') }}">
+            <div id="title_consultoria" class="slogan bn-1">
+                <h4 class="font-semi-bold tn-4">Colsultoria</h4>
+                <h6 class="font-regular tn-4">Realise consultoria marcadas em Considerado.</h6>
+            </div>
+        </div>
+        <div id="card_servicos" class="card-post">
+            <img class="" src="{{ url_for('static', filename='img/assets_png/serv_banner.png') }}">
+            <div id="title_servicos" class="slogan bn-1">
+                <h4 class="font-semi-bold tn-4">Serviços</h4>
+                <h6 class="font-regular tn-4">Que tal publicar sua especialidade Considerado.</h6>
+            </div>
+        </div>
+        <div id="card_emprego" class="card-post">
+            <img class="" src="{{ url_for('static', filename='img/assets_png/empr_banner.png') }}">
+            <div id="title_emprego" class="slogan bn-1">
+                <h4 class="font-semi-bold tn-4">Emprego</h4>
+                <h6 class="font-regular tn-4">Publique vaga de Emprego e encontre um Considerado.</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal_consultoria" class="modal-full bn-5 scrollbar">
+    <div id="btn_return_modal_consultoria" class="return bn-1">
+        <a class="btn-is bn-1">
+            <i class="fas fa-arrow-left tn-4 large"></i>
+        </a>
+    </div>
+    {% from "macros/macro_forms.html" import formConsultoria %}
+    {{ formConsultoria() }}
+
+</div>
+<div id="modal_servicos" class="modal-full bn-5 scrollbar">
+    <div class="return">
+        <a id="naopostado" class="btn-t bn-5">
+            <h4 class="font-regular tn-4">Voltar</h4>
+        </a>
+    </div>
+    {% from "macros/macro_forms.html" import formServicos %}
+    {{ formServicos() }}
+</div>
+
+<div id="modal_emprego" class="modal-full bn-5 scrollbar">
+    <div class="return">
+        <a id="naopostado" class="btn-t bn-5">
+            <h4 class="font-regular tn-4">Voltar</h4>
+        </a>
+    </div>
+    {% from "macros/macro_forms.html" import formEmprego %}
+    {{ formEmprego() }}
+</div>
+{% endmacro %}
+

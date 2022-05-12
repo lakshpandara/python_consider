@@ -1,0 +1,1 @@
+onload = function(){ theme.appendChild(main_content); }

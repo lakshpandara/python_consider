@@ -1,0 +1,50 @@
+@import url("components/theme.css");
+@import url("components/colors.css");
+@import url("components/image.css");
+@import url("components/fonts.css");
+@import url("components/button.css");
+@import url("components/tooltip.css");
+@import url("components/scrollbar.css");
+@import url("components/modal.css");
+@import url("components/menu.css");
+@import url("components/accordion.css");
+@import url("components/forms.css");
+@import url("components/card.css");
+
+#container_profile {
+    position: absolute;
+    top: 0px;
+    left: 2px;
+    right: 2px;
+
+    display: none;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#profile_content {
+    width: 100%;
+    height: 100%;
+}
+
+#item_profile_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#item_profile_body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (max-width:740px) {
+    #container_profile {
+        left: 5px;
+    }
+}
